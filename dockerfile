@@ -59,7 +59,7 @@ RUN touch kernel.config
 RUN mkdir -p scripts
 COPY post.sh scripts/post.sh
 RUN mkdir -p kernel-prereq/dts/rockchip
-COPY rk-dts/* kernel-prereq/dts/rockchip
+COPY rk-dts/* kernel-prereq/dts/rockchip/
 COPY kernel-prereq/* kernel-prereq/
 # COPY kernel kernel
 COPY rockchip-mali-config.in ./package/rockchip-mali/Config.in
