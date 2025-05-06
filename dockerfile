@@ -54,6 +54,11 @@ ENV O=/buildroot_output
 VOLUME /buildroot_output
 VOLUME /root
 
+#Copy & Permission Entrypoint Script
+COPY entrypoint.sh /root/entrypoint.sh
+RUN chmod +x /root/entrypoint.sh
+
+# Copy Build Prerequisites
 COPY .config .config
 RUN touch kernel.config
 RUN mkdir -p scripts
@@ -70,7 +75,7 @@ VOLUME /root/buildroot/package
 VOLUME /root/buildroot/dl
 VOLUME /buildroot_output
 
-RUN make toolchain
+# RUN make toolchain
 # RUN make source
 # RUN make linux
 
@@ -84,3 +89,4 @@ RUN ln -s kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dtb kernel-pack/boo
 
 RUN ["/bin/bash"]
 CMD ["/bin/bash"]
+#ENTRYPOINT ["/root/entrypoint.sh"]
