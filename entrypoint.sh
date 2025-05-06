@@ -15,7 +15,7 @@ make toolchain
 
 # Build Kernel
 echo "Building Kernel..."
-make linux
+make V=1 linux
 
 # Build RootFS
 # echo "Building RootFS..."
