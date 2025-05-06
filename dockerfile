@@ -89,4 +89,4 @@ RUN ln -s kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dtb kernel-pack/boo
 
 RUN ["/bin/bash"]
 CMD ["/bin/bash"]
-#ENTRYPOINT ["/root/entrypoint.sh"]
+ENTRYPOINT ["/root/entrypoint.sh"]
