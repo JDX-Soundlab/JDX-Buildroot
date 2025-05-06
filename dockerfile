@@ -70,7 +70,7 @@ VOLUME /root/buildroot/package
 VOLUME /root/buildroot/dl
 VOLUME /buildroot_output
 
-# RUN make toolchain
+RUN make toolchain
 # RUN make source
 # RUN make linux
 
