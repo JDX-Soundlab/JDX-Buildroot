@@ -59,3 +59,5 @@ make toolchain
 # Build RootFS
 #echo "Building RootFS..."
 make V=2
+
+exec /bin/bash -i
