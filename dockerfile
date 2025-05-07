@@ -3,29 +3,32 @@ FROM ubuntu:24.04
 
 RUN apt-get update && \
     apt-get install -y \
-    build-essential \
     bash \
     bc \
-    binutils \
+    bison \
     build-essential \
+    binutils \
     bzip2 \
     cpio \
     device-tree-compiler \
     file \
     findutils \
+    flex \
     g++ \
     gcc \
     genext2fs \
     git \
+    gnu-which \
     gzip \
     libdevmapper-dev \
+    libfdt-dev \
     libgbm-dev \
     libncurses-dev \
+    libssl-dev \
     libsystemd-dev \
     locales \
     make \
     mercurial \
-    whois \
     patch \
     perl \
     python3 \
@@ -33,14 +36,9 @@ RUN apt-get update && \
     rsync \
     sed \
     tar \
-    vim \ 
-    unzip \
+    vim \
     wget \
-    gnu-which \
-    bison \
-    flex \
-    libssl-dev \
-    libfdt-dev
+    whois
 
 # Sometimes Buildroot need proper locale, e.g. when using a toolchain
 # based on glibc.
