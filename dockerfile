@@ -18,10 +18,11 @@ RUN apt-get update && \
     genext2fs \
     git \
     gzip \
-    locales \
-    libncurses-dev \
     libdevmapper-dev \
+    libgbm-dev \
+    libncurses-dev \
     libsystemd-dev \
+    locales \
     make \
     mercurial \
     whois \
@@ -51,6 +52,7 @@ WORKDIR /root/buildroot
 
 ENV O=/buildroot_output
 
+#Configure Volumes
 VOLUME /buildroot_output
 VOLUME /root
 
