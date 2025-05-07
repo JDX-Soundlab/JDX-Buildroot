@@ -1,0 +1,1 @@
+sudo docker run --mount type=bind,src=/root/buildroot/logs,dst=/root/buildroot/logs freak
