@@ -68,7 +68,7 @@ COPY post.sh scripts/post.sh
 RUN mkdir -p kernel-prereq/dts/rockchip
 COPY rk-dts/* kernel-prereq/dts/rockchip/
 COPY kernel-prereq/* kernel-prereq/
-COPY rockchip boards/
+COPY rockchip boards/rockchip
 # COPY kernel kernel
 COPY rockchip-mali-config.in ./package/rockchip-mali/Config.in
 
