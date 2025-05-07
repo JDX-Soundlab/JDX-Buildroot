@@ -21,6 +21,7 @@ RUN apt-get update && \
     gnu-which \
     gzip \
     libdevmapper-dev \
+    libdrm-dev \
     libfdt-dev \
     libgbm-dev \
     libncurses-dev \
