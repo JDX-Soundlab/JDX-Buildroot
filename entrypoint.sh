@@ -1,13 +1,8 @@
 #!/bin/bash
-set -euxo pipefail
+#set -euxo pipefail
 
 cat << "EOF"
-The following build steps will be executed:
-1. make olddefconfig
-2. make toolchain
-3. make V=1 linux
 
-Continue Prompt
 EOF
 
 while true; do
@@ -27,7 +22,7 @@ while true; do
     esac
 done
 
-# Load Kernel Archive
+# Load Kernel Archive : Can probably be removed.....
 # echo "Archiving Kernel Sources..."
 # git archive --format=tar.gz --output=rockchip-kernel-snapshot.tar.gz develop-4.4
 
@@ -43,6 +38,6 @@ make toolchain
 echo "Building Kernel..."
 make V=2 linux
 
-# Build RootFS
-# echo "Building RootFS..."
-# make buildroot
+Build RootFS
+echo "Building RootFS..."
+make buildroot
