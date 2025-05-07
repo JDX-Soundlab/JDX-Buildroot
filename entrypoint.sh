@@ -27,13 +27,6 @@ while true; do
     esac
 done
 
-# Rest of build steps...
-make olddefconfig
-echo "Building Toolchain..."
-make toolchain
-echo "Building Kernel..."
-make V=1 linux
-
 # Load Kernel Archive
 # echo "Archiving Kernel Sources..."
 # git archive --format=tar.gz --output=rockchip-kernel-snapshot.tar.gz develop-4.4
