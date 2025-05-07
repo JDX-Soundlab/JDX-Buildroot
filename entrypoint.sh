@@ -1,7 +1,24 @@
 #!/bin/bash
 #set -euxo pipefail
 
+# Set locale to C.UTF-8
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
 cat << "EOF"
+
+Welcome to the JDX Buildroot Environment!
+
+    /$$$$$ /$$$$$$$  /$$   /$$        /$$$$$$                                      /$$ /$$                 /$$      
+   |__  $$| $$__  $$| $$  / $$       /$$__  $$                                    | $$| $$                | $$      
+      | $$| $$  \ $$|  $$/ $$/      | $$  \__/  /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$$| $$        /$$$$$$ | $$$$$$$ 
+      | $$| $$  | $$ \  $$$$/       |  $$$$$$  /$$__  $$| $$  | $$| $$__  $$ /$$__  $$| $$       |____  $$| $$__  $$
+ /$$  | $$| $$  | $$  >$$  $$        \____  $$| $$  \ $$| $$  | $$| $$  \ $$| $$  | $$| $$        /$$$$$$$| $$  \ $$
+| $$  | $$| $$  | $$ /$$/\  $$       /$$  \ $$| $$  | $$| $$  | $$| $$  | $$| $$  | $$| $$       /$$__  $$| $$  | $$
+|  $$$$$$/| $$$$$$$/| $$  \ $$      |  $$$$$$/|  $$$$$$/|  $$$$$$/| $$  | $$|  $$$$$$$| $$$$$$$$|  $$$$$$$| $$$$$$$/
+ \______/ |_______/ |__/  |__/       \______/  \______/  \______/ |__/  |__/ \_______/|________/ \_______/|_______/ 
+
+Bottom Text
 
 EOF
 
@@ -26,6 +43,7 @@ done
 # echo "Archiving Kernel Sources..."
 # git archive --format=tar.gz --output=rockchip-kernel-snapshot.tar.gz develop-4.4
 
+# Update the kernel configuration
 make olddefconfig
 
 # Build Toolchain & Sources
@@ -35,9 +53,9 @@ make toolchain
 # make source
 
 # Build Kernel
-echo "Building Kernel..."
-make V=2 linux
+#echo "Building Kernel..."
+#make V=2 linux
 
-Build RootFS
-echo "Building RootFS..."
-make buildroot
+# Build RootFS
+#echo "Building RootFS..."
+make V=2
