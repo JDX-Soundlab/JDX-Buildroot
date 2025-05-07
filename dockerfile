@@ -36,6 +36,7 @@ RUN apt-get update && \
     rsync \
     sed \
     tar \
+    unzip \
     vim \
     wget \
     whois
