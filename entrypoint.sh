@@ -58,7 +58,7 @@ make toolchain
 
 # Build RootFS
 #echo "Building RootFS..."
-make V=1 2>&1 | tee build.log
+make clean && make V=1 2>&1 | tee build.log
 
 echo "Build complete. Dropping to interactive shell..."
 exec /bin/bash -i # Replace current process with interactive shell
