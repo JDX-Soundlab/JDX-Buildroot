@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "We out here building our root & rocking our kernel..."
 
 sudo systemctl start docker
