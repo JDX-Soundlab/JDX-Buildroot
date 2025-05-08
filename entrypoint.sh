@@ -60,18 +60,24 @@ make toolchain
 #echo "Building RootFS..."
 make clean && make V=1 2>&1 | tee build.log
 
-#Pre-Kernel Packaging Prereqs
+# Pre-Kernel Packaging Prereqs
 echo "Preparing to Package Distroboot Kernel..."
 ln -s output/images/Image kernel-pack/boot/Image
 ln -s kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dtb kernel-pack/boot/rk3399-firefly-aio-lvds.dtb
 
-#Package Kernel
+# Package Kernel
 echo "Packaging Kernel..."
 cd kernel-pack/
 genext2fs -b 32768 -B $((32*1024*1024/32768)) -d boot/ -i 8192 -U boot_rk3399.img
 cd ..
 
-#Create Symlinks for Rockdev
+# Create Symlinks for Rockdev
+ln -s ./kernel-pack/boot_rk3399.img ./rockdev/Image/boot.img
+ln -s 
+
+
+
+# Deploy the Steamhappy
 echo "Deploying the Steamhappy..."
 echo "                                                          
                                :+###*:                    
