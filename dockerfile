@@ -85,8 +85,6 @@ VOLUME /buildroot_output
 # Create kernel packing tree
 RUN mkdir -p kernel-pack/boot/extlinux
 COPY extlinux.conf kernel-pack/boot/extlinux
-RUN ln -s output/images/Image kernel-pack/boot/Image
-RUN ln -s kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dtb kernel-pack/boot/rk3399-firefly-aio-lvds.dtb
 
 # RUN dtc -I dts -O dtb -o ./kernel-prereq/rk3399-firefly-aio-lvds.dtb ./kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dts
 

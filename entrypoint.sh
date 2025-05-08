@@ -60,6 +60,17 @@ make toolchain
 #echo "Building RootFS..."
 make clean && make V=1 2>&1 | tee build.log
 
+#Pre-Kernel Packaging Prereqs
+echo "Preparing to Package Distroboot Kernel..."
+RUN ln -s output/images/Image kernel-pack/boot/Image
+RUN ln -s kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dtb kernel-pack/boot/rk3399-firefly-aio-lvds.dtb
+
+#Package Kernel
+echo "Packaging Kernel..."
+cd kernel-pack/
+genext2fs -b 32768 -B $((32*1024*1024/32768)) -d boot/ -i 8192 -U boot_rk3399.img
+cd ..
+
 echo "Build complete. Dropping to interactive shell..."
 exec /bin/bash -i # Replace current process with interactive shell
 
