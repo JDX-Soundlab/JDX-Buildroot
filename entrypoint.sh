@@ -71,6 +71,9 @@ cd kernel-pack/
 genext2fs -b 32768 -B $((32*1024*1024/32768)) -d boot/ -i 8192 -U boot_rk3399.img
 cd ..
 
+#Create Symlinks for Rockdev
+
+
 echo "Build complete. Dropping to interactive shell..."
 exec /bin/bash -i # Replace current process with interactive shell
 

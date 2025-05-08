@@ -70,7 +70,8 @@ COPY rk-dts/* kernel-prereq/dts/rockchip/
 COPY kernel-prereq/* kernel-prereq/
 COPY rockchip board/rockchip
 # COPY kernel kernel
-COPY rockchip-mali-config.in ./package/rockchip-mali/Config.in
+COPY rockchip-mali-config.in ./package/rockchip-mali/Config.
+COPY rockdev rockdev
 
 # RUN git init /root/buildroot/kernel/.git
 

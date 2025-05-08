@@ -1,1 +1,4 @@
-sudo docker run --mount type=bind,src=/root/buildroot/logs,dst=/root/buildroot/logs freak
+
+echo "We out here building our root & rocking our kernel..."
+sudo docker build -t jdxbuildroot .
+sudo docker run -it jdxbuildroot
