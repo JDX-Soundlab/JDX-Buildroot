@@ -16,6 +16,7 @@ RUN apt-get update && \
     flex \
     g++ \
     gcc \
+    gcc-arm-none-eabi \
     genext2fs \
     git \
     gnutls-dev \
