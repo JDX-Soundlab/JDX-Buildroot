@@ -18,6 +18,7 @@ RUN apt-get update && \
     gcc \
     genext2fs \
     git \
+    gnutls-dev \
     gnu-which \
     gzip \
     libdevmapper-dev \
@@ -27,15 +28,20 @@ RUN apt-get update && \
     libncurses-dev \
     libssl-dev \
     libsystemd-dev \
+    libstdc++-14-dev \
     locales \
     make \
     mercurial \
     patch \
     perl \
     python3 \
+    python3-dev \
+    python3-setuptools \
     python-is-python3 \
+    rkdeveloptool \
     rsync \
     sed \
+    swig \
     tar \
     unzip \
     vim \
@@ -72,6 +78,13 @@ COPY rockchip board/rockchip
 # COPY kernel kernel
 COPY rockchip-mali-config.in ./package/rockchip-mali/Config.
 COPY rockdev rockdev
+# U-boot Prerequisites
+COPY uboot-prereq uboot-prereq
+RUN mkdir ~/evb_rk3399
+# Clone RK Vendor Tools
+RUN git clone https://github.com/rockchip-linux/rkbin.git
+RUN git clone https://github.com/rockchip-linux/rkdeveloptool.git
+
 
 # RUN git init /root/buildroot/kernel/.git
 

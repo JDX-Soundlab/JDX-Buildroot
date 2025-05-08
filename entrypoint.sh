@@ -73,7 +73,8 @@ cd ..
 
 # Create Symlinks for Rockdev
 ln -s ./kernel-pack/boot_rk3399.img ./rockdev/Image/boot.img
-ln -s 
+ln -s ./output/images/rootfs.ext2 ./rockdev/Image/rootfs.ext4
+ln -s ./output/images/rootfs.ext2 ./rockdev/Image/rootfs.img
 
 
 
