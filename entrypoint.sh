@@ -39,10 +39,6 @@ while true; do
     esac
 done
 
-# Load Kernel Archive : Can probably be removed.....
-# echo "Archiving Kernel Sources..."
-# git archive --format=tar.gz --output=rockchip-kernel-snapshot.tar.gz develop-4.4
-
 # Update the kernel configuration
 make olddefconfig
 
