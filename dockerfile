@@ -36,6 +36,7 @@ RUN apt-get update && \
     perl \
     python3 \
     python3-dev \
+    python3-pyelftools \
     python3-setuptools \
     python-is-python3 \
     rkdeveloptool \
