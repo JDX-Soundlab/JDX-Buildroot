@@ -12,19 +12,16 @@ fi
 # Define the source file path inside the container
 source_file="/root/buildroot/.config"
 
-# Check if a file with the specified name already exists
-if [ -f "${destination_path}" ]; then
-    mv "${destination_path}" "${destination_path}.old"
-    echo "Existing file renamed to ${destination_path}.old."
-fi
+# Define the destination path on the host
+destination_path="./exported_config"
 
 # Copy the file from the container to the host
 docker cp "${container_id}:${source_file}" "${destination_path}"
 
 # Check if the copy was successful
 if [ $? -eq 0 ]; then
-    echo "File copied successfully to ${destination_path}."
+    echo "Configuration exported successfully to ${destination_path}."
 else
-    echo "Failed to copy the file."
+    echo "Failed to export the configuration."
     exit 1
 fi
