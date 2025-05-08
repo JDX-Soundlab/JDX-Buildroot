@@ -7,3 +7,7 @@ Build UBoot
     https://opensource.rock-chips.com/wiki_Boot_option#rkxx_loader_vx.xx.xxx.bin 
     Attempt using TPL/SPL over Rockchip MiniLoader
     Build ATF
+    UBoot Recovery
+Pack Image
+    Create Symlinks
+    Custom packagefile

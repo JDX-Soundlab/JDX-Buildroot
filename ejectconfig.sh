@@ -12,13 +12,10 @@ fi
 # Define the source file path inside the container
 source_file="/root/buildroot/.config"
 
-# Define the destination path on the host
-destination_path="./config_copy"
-
-# Check if a file named .config already exists in the destination path
+# Check if a file with the specified name already exists
 if [ -f "${destination_path}" ]; then
-    mv "${destination_path}" "${destination_path}old"
-    echo "Existing file renamed to ${destination_path}old."
+    mv "${destination_path}" "${destination_path}.old"
+    echo "Existing file renamed to ${destination_path}.old."
 fi
 
 # Copy the file from the container to the host
