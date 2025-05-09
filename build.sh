@@ -43,4 +43,5 @@ echo "Allocated RAM: ${ALLOCATED_RAM} MB"
 echo "Allocated Swap: ${ALLOCATED_SWAP} MB"
 echo "Allocated Cores: ${ALLOCATED_CORES}"
 
+# build that john
 sudo docker run --rm -it --memory="${ALLOCATED_RAM}m" --memory-swap="$((ALLOCATED_RAM + ALLOCATED_SWAP))m" --cpus="${ALLOCATED_CORES}" jdxbuildroot
