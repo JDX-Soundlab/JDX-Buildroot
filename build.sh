@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "We out here building our root & rocking our kernel..."
+echo "We out here building our root & rocking our chip..."
 
 sudo systemctl start docker
 sudo docker build -t jdxbuildroot .
