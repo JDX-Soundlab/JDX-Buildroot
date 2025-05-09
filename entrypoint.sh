@@ -54,7 +54,7 @@ make toolchain
 
 # Build RootFS
 #echo "Building RootFS..."
-make clean && make V=1 2>&1 | tee build.log
+make V=1 2>&1 | tee build.log
 
 # Pre-Kernel Packaging Prereqs
 echo "Preparing to Package Distroboot Kernel..."
@@ -72,6 +72,11 @@ ln -s ./kernel-pack/boot_rk3399.img ./rockdev/Image/boot.img
 ln -s ./output/images/rootfs.ext2 ./rockdev/Image/rootfs.ext4
 ln -s ./output/images/rootfs.ext2 ./rockdev/Image/rootfs.img
 
+# Package Bootloader
+echo "Packaging Bootloader..."
+cd output/images
+mkimage -n rk3399 -T rksd -d u-boot-tpl.bin idbloader.img
+mkimage -n rk3399 -T rksd -d u-boot-spl.bin idbspl.img
 
 
 # Deploy the Steamhappy
