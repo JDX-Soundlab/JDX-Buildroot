@@ -44,6 +44,7 @@ RUN apt-get update && \
     sed \
     swig \
     tar \
+    u-boot-tools \
     unzip \
     vim \
     wget \
