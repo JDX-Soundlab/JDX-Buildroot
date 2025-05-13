@@ -72,6 +72,7 @@ RUN chmod +x /root/entrypoint.sh
 COPY .config .config
 RUN touch kernel.config
 RUN mkdir -p scripts
+RUN mkdir -p logs
 COPY post.sh scripts/post.sh
 RUN mkdir -p kernel-prereq/dts/rockchip
 COPY rk-dts/* kernel-prereq/dts/rockchip/

@@ -44,19 +44,23 @@ make olddefconfig
 
 # Build Toolchain & Sources
 echo "Building Toolchain..."
-make toolchain
+make toolchain V=1 2>&1 | tee logs/toolchain.log
 # echo "Building Sources.."
 # make source
 
 # Build Kernel
-#echo "Building Kernel..."
-#make V=2 linux
+echo "Building Kernel..."
+make V=1 linux | tee logs/kernel.log
+
+# Build U-Boot
+echo "Building U-Boot..."
+make V=1 uboot | tee logs/uboot.lo
 
 # Build RootFS
 #echo "Building RootFS..."
-make V=1 2>&1 | tee build.log
+make V=1 2>&1 | tee logs/build.log
 
-# Pre-Kernel Packaging Prereqs
+# Create Kernel Symlinks
 echo "Preparing to Package Distroboot Kernel..."
 ln -s output/images/Image kernel-pack/boot/Image
 ln -s kernel-prereq/dts/rockchip/rk3399-firefly-aio-lvds.dtb kernel-pack/boot/rk3399-firefly-aio-lvds.dtb
@@ -77,6 +81,7 @@ echo "Packaging Bootloader..."
 cd output/images
 mkimage -n rk3399 -T rksd -d u-boot-tpl.bin idbloader.img
 mkimage -n rk3399 -T rksd -d u-boot-spl.bin idbspl.img
+cd ../..
 
 
 # Deploy the Steamhappy
