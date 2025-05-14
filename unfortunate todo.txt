@@ -1,7 +1,3 @@
-Add to container build source config 
-    Toolchain COMPLETE
-        Test Buildroot Toolchain COMPLETE
-        Switch Header Version to 6.1 COMPLETE
 Build UBoot
     https://github.com/rockchip-linux/u-boot/tree/next-dev/board/rockchip/evb_rk3399
     https://opensource.rock-chips.com/wiki_Boot_option#rkxx_loader_vx.xx.xxx.bin 
