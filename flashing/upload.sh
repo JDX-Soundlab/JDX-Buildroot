@@ -1,8 +1,4 @@
 #!/bin/bash
-if [[ $EUID -ne 0 ]]; then
-    echo "This script must be run as root."
-    exit 1
-fi
 rkdeveloptool db rk3399_loader_v1.24.126.bin
 rkdeveloptool gpt parameter.txt
 rkdeveloptool wl 0x40 idbloader.img
