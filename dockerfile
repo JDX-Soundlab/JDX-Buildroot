@@ -76,6 +76,8 @@ RUN mkdir -p logs
 COPY post.sh scripts/post.sh
 RUN mkdir -p kernel-prereq/dts/rockchip
 COPY rk-dts/* kernel-prereq/dts/rockchip/
+RUN mkdir rk-dts
+COPY rk-dts/* rk-dts/
 COPY kernel-prereq/* kernel-prereq/
 COPY rockchip board/rockchip
 # COPY kernel kernel
@@ -92,7 +94,7 @@ RUN git clone https://github.com/rockchip-linux/rkdeveloptool.git
 # RUN git init /root/buildroot/kernel/.git
 
 VOLUME /root/buildroot/package
-VOLUME /root/buildroot/dl
+VOLUME /root/build root/dl
 VOLUME /buildroot_output
 
 # RUN make toolchain
