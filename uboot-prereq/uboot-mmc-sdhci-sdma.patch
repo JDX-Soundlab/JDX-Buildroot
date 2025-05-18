@@ -1,0 +1,12 @@
+--- a/include/configs/evb_rk3399.h
++++ b/include/configs/evb_rk3399.h
+@@ -123,6 +123,8 @@
+ #endif
+ 
+ #ifdef CONFIG_MMC_SDHCI
++#ifndef CONFIG_MMC_SDHCI_SDMA
++#define CONFIG_MMC_SDHCI_SDMA
++#endif
+ #define CONFIG_GENERIC_MMC		1
+ #define CONFIG_CMD_MMC			1
+ #define CONFIG_CMD_SDHCI			1
